@@ -22,7 +22,7 @@ jobs:
 
     env:
       VENDOR: xiaomi
-      DEVICE: kenzo
+      DEVICE: santoni
       ANDROID_ROOT: /home/runner/work/halium/
 
     steps:
@@ -48,7 +48,7 @@ jobs:
         mkdir -p ~/bin
         wget 'https://storage.googleapis.com/git-repo-downloads/repo' -P ~/bin
         chmod +x ~/bin/repo
-        git config --global user.name "UBports Redmi Note 3 CI"
+        git config --global user.name "UBports Redmi 4/4x CI"
         git config --global user.email "thisemaildoesnotexist@exist.com"
 
     - name: Downloading source code
@@ -71,16 +71,16 @@ jobs:
       uses: actions/upload-artifact@master
       with:
         name: halium-boot image
-        path: /home/runner/work/halium/out/target/product/kenzo/halium-boot.img
+        path: /home/runner/work/halium/out/target/product/santoni/halium-boot.img
 
     - name : Upload recovery image
       uses: actions/upload-artifact@master
       with:
         name: Recovery image
-        path: /home/runner/work/halium/out/target/product/kenzo/recovery.img
+        path: /home/runner/work/halium/out/target/product/santoni/recovery.img
 
     - name : Upload system image
       uses: actions/upload-artifact@master
       with:
         name: System image
-        path: /home/runner/work/halium/out/target/product/kenzo/system.img
+        path: /home/runner/work/halium/out/target/product/santoni/system.img
